@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Stock value calculator</title>
+        <script type="application/javascript">
+            function Calculate()
+            {
+                var riskamount=parseFloat( document.getElementById("RiskAmount").value);
+                 var StopLossPercentage=parseFloat(document.getElementById("StopLossPercentage").value);
+                 var Stockprice=parseFloat(document.getElementById("Stockprice").value);
+                
+                 var SaleStoploss=document.getElementById("SaleStoploss");
+                 var Quantity=document.getElementById("Quantity");
+                 var BuyStoploss=document.getElementById("BuyStoploss");
+                
+                var stloss=((Stockprice*StopLossPercentage)/100);
+                var buyquantity=(riskamount/stloss);
+                var buyloss=Stockprice-stloss;
+                
+                var saleloss=Stockprice+stloss;
+                
+                SaleStoploss.textContent=saleloss.toFixed(1);
+                    Quantity.textContent=buyquantity.toFixed(0);
+                    BuyStoploss.textContent=buyloss.toFixed(1);
+            }
+        
+        </script>
+       
+    </head>
+    <body>
+        <h1>Zerodha Stock value calculator </h1>
+        <h2>Each Trade Risk Amount: <input id="RiskAmount" type="text" value="25"></h2>
+         <h2>Stop loss in Percentage: <input id="StopLossPercentage" type="text" value="0.3"></h2>
+         <h2>Current Stock price: <input id="Stockprice" type="text" value="200"></h2>
+         <br/>
+        
+          <h2 style="Color:red;">Sale Stoploss :   <span id="SaleStoploss"></span> </h2>
+         <h2>Quantity:  <span id="Quantity"></span> </h2>
+           <h2 style="Color:Green;">Buy Stoploss:  <span id="BuyStoploss"></span>   </h2>
+          <br/>
+         <br/>
+         
+        <input id="saveLimit" type="submit" onclick="Calculate()" value="Calculate"/>
+       
+<!--        <input id="resetTotal" type="submit" value="Reset Total" >-->
+        
+    </body>
+</html>
