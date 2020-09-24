@@ -28,12 +28,17 @@
        
     </head>
     <body>
-        <h1>Zerodha Stock value calculator </h1>
-        <h2>Each Trade Risk Amount: <input id="RiskAmount" type="text" value="25"></h2>
-         <h2>Stop loss in Percentage: <input id="StopLossPercentage" type="text" value="0.3"></h2>
-         <h2>Current Stock price: <input id="Stockprice" type="text" value="200"></h2>
+      <div>
+       <div style="width: 50%;  float: left;">
+           <h1>Zerodha Stock value calculator </h1>
+            <h2>Each Trade Risk Amount: <input id="RiskAmount" type="number" value="25"></h2>
+         <h2>Stop loss in Percentage: <input id="StopLossPercentage" type="number" value="0.3"></h2>
+         <h2>Current Stock price: <input id="Stockprice" type="number" value=""></h2>
          <br/>
+       </div>
         
+       
+         <div style="width: 50%;  float: right;">
           <h2 style="Color:red;">Sale Stoploss :   <span id="SaleStoploss"></span> </h2>
          <h2>Quantity:  <span id="Quantity"></span> </h2>
            <h2 style="Color:Green;">Buy Stoploss:  <span id="BuyStoploss"></span>   </h2>
@@ -41,8 +46,8 @@
          <br/>
          
         <input id="saveLimit" type="submit" onclick="Calculate()" value="Calculate"/>
-       
-<!--        <input id="resetTotal" type="submit" value="Reset Total" >-->
+        </div>
+</div>
         
     </body>
 </html>
